@@ -3,7 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>NeuroFlow AI - Predictive Workflow Platform</title>
+    <script>
+      // Protective shim for fetch to prevent Uncaught TypeError when libraries try to overwrite it
+      try {
+        const _origFetch = window.fetch;
+        Object.defineProperty(window, 'fetch', {
+          configurable: true,
+          enumerable: true,
+          get: function() { return _origFetch; },
+          set: function(v) { 
+            console.warn('NeuroFlow: Suppressed attempt to overwrite window.fetch', v); 
+          }
+        });
+      } catch (e) {
+        // If we can't redefine it, we just hope the offending script doesn't run
+      }
+
+      // Shim global to help certain legacy dependencies
+      if (typeof global === 'undefined') {
+        window.global = window;
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

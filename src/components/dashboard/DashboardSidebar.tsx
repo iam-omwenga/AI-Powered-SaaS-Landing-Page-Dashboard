@@ -83,6 +83,27 @@ export default function DashboardSidebar({ onLogout }: { onLogout: () => void })
             <span className="hidden md:inline">Sign Out</span>
           </button>
         </div>
+
+        <div className="pt-4 border-t border-white/5">
+           <a 
+            href="https://fitiweso.lovable.app" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group block w-full"
+          >
+            <div className="bg-white/5 border border-white/10 rounded-xl p-3 transform transition-all duration-500 hover:scale-[1.05] hover:-rotate-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_20px_rgba(59,130,246,0.1)] relative overflow-hidden group">
+               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+               <p className="text-[8px] uppercase font-black tracking-widest text-slate-500 mb-1 group-hover:text-blue-400 transition-colors">Digital Architects</p>
+               <p className="text-[9px] font-bold text-slate-400 group-hover:text-white leading-tight transition-colors">
+                 <span className="hidden md:inline">Financial Times Web Solutions and Consultants</span>
+                 <span className="md:hidden">FTWSC</span>
+               </p>
+               
+               {/* 3D Accents */}
+               <div className="absolute top-1 right-1 w-1 h-1 rounded-full bg-blue-500/20 group-hover:bg-blue-500 transition-colors shadow-[0_0_5px_rgba(59,130,246,0.5)]" />
+            </div>
+           </a>
+        </div>
       </div>
     </aside>
   );
